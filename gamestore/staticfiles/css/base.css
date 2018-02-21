@@ -1,0 +1,21 @@
+.nav-link {
+  color: red;
+  background-color: #3366ff;
+}
+
+.navbar-light {
+  color: red;
+}
+
+body {
+  background-color: #bbeeff;
+  color: white;
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light{
+  background-color: red;
+}
+
+.bg-light {
+  background-color: red;
+}

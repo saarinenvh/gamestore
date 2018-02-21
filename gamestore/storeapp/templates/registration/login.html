@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST" class="loginform">
+    {% csrf_token %}
+    <br>
+    <h2>Log In</h2>
+    <p>
+        <label>Username:</label>
+        <input type="text" name="username">
+    </p>
+    <p>
+        <label>Password:</label>
+        <input type="password" name="password">
+    </p>
+    {% if form.errors %}
+    <p> Your username and/or password didn't match </p>
+    {% endif %}
+    <button type="submit">Log in</button>
+</form>
+{% endblock %}

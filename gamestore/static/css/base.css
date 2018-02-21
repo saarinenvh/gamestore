@@ -1,0 +1,129 @@
+body {
+  background-color: #383356;
+  color: #bdb3cf;
+  font-family: Courier new;
+}
+
+a.btn.btn-danger.float-right, a.btn.btn-warning.float-right {
+  color: #bdb3cf;
+  background-color: #24254d;
+  border-color: #24254d;
+  margin: 3px;
+}
+
+.save-selector {
+  display: block;
+}
+
+.form * label {
+  width: 14%;
+}
+
+.form * span {
+  font-size: 10px;
+  width: 5%;
+}
+
+/*Password change form*/
+.pswForm  {
+  margin-top: 10vh;
+  margin-right: 20vw;
+  display: grid;
+}
+
+/*Savebutton of the password change form*/
+.pswForm > button {
+  margin-top: 10vh;
+  width: 15vw;
+}
+/*Changes the label width of password change form*/
+.pswForm > label {
+  width: 15vw;
+}
+
+/*Changes the width of input field in password change form*/
+.pswForm > input {
+  width: 20vw;
+}
+/*Hides the helptext in password change form*/
+.helptext {
+  visibility: hidden;
+  width: 15vw;
+  height: 0px;
+  font-size: 0.5em;
+}
+
+/*Game listing*/
+.list-group {
+  padding-top: 5vh;
+  margin: 0 auto;
+  width: 50vw;
+  color: #bdb3cf;
+
+}
+
+/*Buy button background color*/
+.mb-1 {
+  background-color: #686374;
+  width: 50vw;
+}
+
+/*Game listing background and border colors */
+a.list-group-item {
+  background-color: #686374;
+  border-color: #686374;
+}
+
+a.btn.btn-light {
+  float: right;
+  width: 15vh;
+  color: #bdb3cf;
+  background-color: #24254d;
+  border-color: #24254d;
+  margin-right: 2px;
+  margin-bottom: 2px;
+}
+
+a.btn.btn-light:hover {
+  background-color: #63667d;
+  border-color: #63667d;
+  color: #a097ad;
+}
+
+.payment {
+  padding: 10%;
+}
+
+.payment small {
+  display: block;
+}
+
+.game {
+  padding: 20px;
+  margin-left: 20%;
+}
+
+#game-iframe {
+  margin-top: 20vh;
+
+}
+
+/*Navbar dropdown menu*/
+.dropdown-menu {
+  background-color: #191438;
+  font-family: Courier new;
+  color: #bdb3cf;
+}
+
+.dropdown-item{
+  color: #bdb3cf;
+}
+
+li.nav-link {
+  color: #bdb3cf;
+  font-family: Courier new;
+}
+
+.ownGames {
+  display: inline;
+}

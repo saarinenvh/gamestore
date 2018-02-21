@@ -1,0 +1,33 @@
+{%  extends 'base.html' %}
+{% block content %}
+<div class = "game">
+<h1>{{ game.name }}</h1>
+<small>by {{ game.maker }}</small>
+<br>
+<br>
+<p>{{ game.description }}</p>
+<p>Price: {{ game.price }} </p>
+<p>
+<p>{{ owns }}</p>
+{% if owns %}
+  <a href='/playgames/{{game.pk}}' role="button" class="btn btn-success">Play</a>
+{% else %}
+  <form action="http://payments.webcourse.niksula.hut.fi/pay/" method="POST">
+      <input type="hidden" name="pid" value="{{ pid }}" />
+      <input type="hidden" name="sid" value="{{ sid }}" />
+      <input type="hidden" name="success_url"
+              value="http://localhost:8000/payment/success" />
+      <input type="hidden" name="cancel_url"
+              value="http://localhost:8000/payment/cancel" />
+      <input type="hidden" name="error_url"
+              value="http://localhost:8000/payment/error" />
+      <input type="hidden" name="checksum"
+              value="{{ checksum }}" />
+
+      <input type="hidden" id="id_amount" name="amount" value="{{ game.price }}" />
+      <input type="submit" value="Accept Payment"/>
+      <a href='/games' role="button" class="btn">Cancel</a>
+  </form>
+{% endif %}
+</div>
+{% endblock %}

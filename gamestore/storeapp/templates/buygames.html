@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="list-group">
+    {% for game in gameslist %}
+      <a class="list-group-item list-group-item flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ game.name }} ({{ game.price }} $)</h5>
+          <small>By {{ game.maker.username }}</small>
+        </div>
+        <p class="mb-1">
+          <span class="d-inline-block text-truncate" style="max-width: 40vw;">{{ game.description }}</span>
+          <a href="{{ game.get_absolute_url }}" role="button" class="btn btn-light">Buy</a>
+        </p>
+      </a>
+    {% empty %}
+      <p>Sorry, no games in library!</p>
+    {% endfor %}
+  </div>
+  {% endblock %}

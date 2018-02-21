@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if game.maker.id == user.id %}
+<p>
+  <form action="" method="post">{% csrf_token %}
+      <p>Are you sure you want to delete "{{ object }}"?</p>
+      <input type="submit" value="Confirm" />
+  </form>
+  <a href='/dev/games' role="button" class="btn">Cancel</a>
+</p>
+{% else %}
+<p>
+  You can't remove this {{ game.name }}
+</p>
+{% endif %}
+{% endblock %}

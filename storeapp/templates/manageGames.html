@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load auth_extras %}
+{% block content %}
+
+  {% if request.user|has_group:"developer" %}
+    <div class = "form">
+
+        <h1>{{ method }} game</h1>
+        <form method="POST" class="form">
+          {% csrf_token %}
+          {{ form.as_p}}
+          <button class="btn" type="submit">{{ method }}</button>
+          <a href='/dev/games' role="button" class="btn">Cancel</a>
+        </form>
+    </div>
+  {% else %}
+    <p>
+      <br>
+      You can't do nothing here!
+    </p>
+  {% endif %}
+{% endblock %}

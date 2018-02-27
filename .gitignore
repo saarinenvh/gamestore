@@ -1,5 +1,1 @@
-
-__pycache__/
-storeapp/__pycache__/
-*.pyc
-db.sqlite3
+.py[cod]

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if user.is_authenticated %}
+  <h1>Your Highscores</h1>
+  <hr>
+  {% if games %}
+  <table class="scoretable">
+    <tr>
+      <th>Game</th>
+      <th>Top score</th>
+      <th>Own record</th>
+    </tr>
+    {% for game in games %}
+    <tr class="scoretable-row">
+      <td><a href="{% url 'topten' game.gameID %}">{{game.name}}</a></td>
+      <td>{{game.topscore}}</td>
+      <td>{{game.ownbest}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p>You don't have any highscores :(</p>
+  {% endif %}
+{% else %}
+<br>
+<p>Please log in <a href="/accounts/login">here</a> to see highscores</p>
+{% endif %}
+
+{% endblock %}

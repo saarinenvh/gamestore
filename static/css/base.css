@@ -1,0 +1,190 @@
+body {
+  background-color: #383356;
+  color: #bdb3cf;
+  font-family: Courier new;
+}
+
+a.btn.btn-danger.float-right, a.btn.btn-warning.float-right {
+  color: #bdb3cf;
+  background-color: #24254d;
+  border-color: #24254d;
+  margin: 3px;
+}
+
+/*Adds marging to the headers on each page*/
+h1 {
+  margin-top: 10px;
+}
+/*List of different saves, displays them on top of
+  eachother*/
+.save-selector {
+  display: block;
+}
+
+/*Changes the lable width of signup form */
+.form * label {
+  width: 15vw;
+}
+
+/*Password change form*/
+.pswForm  {
+  margin: 0px auto;
+  display: grid;
+}
+
+/*Savebutton of the password change form*/
+.pswForm > button {
+  margin-top: 10vh;
+  width: 15vw;
+}
+/*Changes the label width of password change form*/
+.pswForm > label {
+  width: 15vw;
+  min-width: 150px;
+}
+
+/*Changes the width of input field in password change form*/
+.pswForm > input {
+  width: 20vw;
+  min-width: 210px;
+}
+/*Hides the helptext in password change form*/
+.helptext {
+  visibility: hidden;
+  width: 15vw;
+  height: 0px;
+  font-size: 0.5em;
+}
+
+/*Game listing*/
+.list-group {
+  padding-top: 5vh;
+  margin: 0 auto;
+  width: 50vw;
+  color: #bdb3cf;
+
+}
+
+/*Buy button background color*/
+.mb-1 {
+  background-color: #686374;
+  width: 50vw;
+}
+
+/*Game listing background and border colors */
+a.list-group-item {
+  background-color: #686374;
+  border-color: #686374;
+}
+
+a.btn.btn-light {
+  float: right;
+  width: 120px;
+  color: #bdb3cf;
+  background-color: #24254d;
+  border-color: #24254d;
+  margin-right: 2px;
+  margin-bottom: 2px;
+}
+
+a.btn.btn-light:hover {
+  border-color: #63667d;
+  color: white;
+}
+
+.btn {
+  width: 120px;
+  color: #bdb3cf;
+  margin-bottom: 2px;
+  background-color: #24254d;
+}
+
+.btn:hover, #cancel:hover {
+  border-color: #63667d;
+  color: white;
+}
+
+/*Success messages after buying a game and
+  and email templates*/
+.payment {
+  padding: 10%;
+}
+
+.payment small {
+  display: block;
+}
+
+/*Game detail view*/
+.game {
+  margin: 0px auto;
+  margin-top: 5vh;
+  width: 30vw;
+  padding: 10px;
+  background-color: #686374;
+  border-radius: 5px;
+  min-width: 270px;
+}
+
+/*IFrame for playin a game*/
+#game-iframe {
+  margin: 0px auto;
+  margin-top: 5vh;
+  height: 70vh;
+  width: 80vw;
+  max-width: 1200px;
+  background-color: #686374;
+}
+/*Cancel button in gameplay view*/
+#cancel {
+  float: right;
+  background-color:#686374;
+  color: #bdb3cf;
+}
+
+/*Navlinks color*/
+.navbar-dark .navbar-nav .nav-link {
+  color:#bdb3cf;
+}
+
+/*Navlink hover color*/
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: white;
+}
+
+/*Navbar dropdown menu*/
+.dropdown-menu {
+  background-color: #191438;
+  font-family: Courier new;
+  color: #bdb3cf;
+}
+
+/*Color of navbar item*/
+.dropdown-item{
+  color: #bdb3cf;
+}
+/*Add Game button in manage games view*/
+#addGame {
+  float: right;
+  margin-top: 10px;
+  margin-right: 4vw;
+}
+
+/*rows in tables used to display hiscores*/
+.scoretable-row {
+  background-color: #686374;
+}
+
+/*creates a small gap between table rows*/
+.scoretable {
+  border-spacing: 0 2px;
+  border-collapse: separate;
+}
+
+/*bit more width for columns*/
+.scoretable td, .scoretable th {
+  padding: 0 1vh;
+}
+
+.scoretable a {
+  color: #24254d;
+}

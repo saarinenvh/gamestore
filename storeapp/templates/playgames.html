@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+{% csrf_token %}
+<script>
+  var gameID = {{game.pk}}
+</script>
+
+<script src="{% static "/js/gameMessage.js" %}"></script>
+
+<iframe src={{game.url}} id="game-iframe"></iframe>
+<div id="msg-feedback"></div>
+<a href='/playgames' role="button" class="btn" id="cancel">Quit</a>
+
+{% endblock %}

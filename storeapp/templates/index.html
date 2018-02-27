@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load auth_extras %}
+{% block content %}
+
+  {% if user.is_authenticated %}
+    <br>
+    <p>
+      Welcome to the Game Store {{ user.username }}!<br><br>
+      Here you can browse, buy and play games by selecting <br>
+      Buy or Play Games from the navigation bar.<br>
+    </p>
+    {% if request.user|has_group:"developer" %}
+      You can add, modify and delete your games in your profile.<br>
+      Statistics are also avaliable there for you.<br><br>
+    {% endif %}
+      If you want to see your own highscores<br>
+      you can click My Highscores in the navigation bar.<br><br>
+      Have fun!
+    </p>
+  {% else %}
+    <h1>Welcome to the Game Store!</h1>
+    <hr>
+    <p>
+      If you're new , please sign up <a href="/signup">here</a>.<br>
+      if you're an old member, please log in <a href="/accounts/login">here</a>.<br>
+    </p>
+  {% endif %}
+  
+{% endblock %}

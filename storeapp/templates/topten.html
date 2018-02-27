@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <h1>Highscores for {{gamename}}</h1>
+  <hr>
+
+  {% if topscores %}
+  <table class="scoretable">
+    <tr>
+      <th>Rank</th>
+      <th>Score</th>
+      <th>Player</th>
+    </tr>
+    {% for score in topscores %}
+    <tr class="scoretable-row">
+      <td>{{score.rank}}</td>
+      <td>{{score.score}}</td>
+      <td>{{score.player}}</td>
+    </tr>
+    {% endfor %}
+    {% for score in competitors %}
+    <tr class="scoretable-row">
+      <td>{{score.rank}}</td>
+      <td>{{score.score}}</td>
+      <td>{{score.player}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+
+  {% if not topscores %}
+  <p>Nobody has submitted scores yet</p>
+  {% elif not hasScores and request.user.is_authenticated %}
+  <br>
+  <p>You have not submitted any scores</p>
+  {% endif %}
+
+{% endblock %}

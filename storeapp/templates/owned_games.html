@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Play Games</h1>
+<hr>
+
+  <div class="list-group">
+    {% for game in games %}
+      <a class="list-group-item list-group-item flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ game.name }}</h5>
+          <small>By {{ game.maker }}</small>
+        </div>
+
+        <p class="mb-1">
+          <span class="d-inline-block text-truncate" style="max-width: 40vw;">{{ game.description }}</span>
+          <a href='/playgames/{{game.pk}}' role="button" class="btn btn-light">Play</a>
+          <a href="{% url 'topten' game.id %}" role="button" class="btn btn-light" id='highscores'>Highscores</a>
+        </p>
+      </a>
+    {% empty %}
+      <br>
+      <p>
+        Oh no! You do not own any games yet.<br>
+        Go ahead and buy some so you can play them!
+      </p>
+    {% endfor %}
+  </div>
+  
+{% endblock %}

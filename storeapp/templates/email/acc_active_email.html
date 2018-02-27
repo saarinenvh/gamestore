@@ -1,0 +1,11 @@
+{% autoescape off %}
+
+Hi {{ user.username }},
+Thanks for signing up to Game Store!
+
+Please click on the link to confirm your registration,
+http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+
+Hope you have nice time playing our games!
+
+{% endautoescape %}

@@ -1,0 +1,3 @@
+{% for save in saves %}
+<button type="button" class="save-selector" name="{{save.id}}">{{save.saveName|default:"unnamed save"}}</button>
+{% endfor %}

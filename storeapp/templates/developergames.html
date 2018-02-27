@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 id="manageGames">Manage Games</h1>
+<a id="addGame" href="{% url 'add_game' %}" role="button" class="btn btn-light">Add Game</a>
+<hr />
+
+  {% if game_list %}
+    <div class="list-group">
+      {% for game in game_list %}
+        <a class="list-group-item list-group-item flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ game.name }} ({{ game.price}} $)</h5>
+            <small>By {{ game.maker }}</small>
+          </div>
+
+          <p class="mb-1">
+            <span class="d-inline-block text-truncate" style="max-width: 40vw;">{{ game.description }}</span>
+            <a href="{% url 'delete_game' game.id %}" role="button" class="btn btn-danger float-right">Delete</a>
+            <a href="{% url 'update_game' game.id %}" role="button" class="btn btn-warning float-right">Edit</a>
+          </p>
+
+          {% for sale in sales %}
+            {% if game.id == sale.pid %}
+              Sold: {{ sale.count }}, Profit: {{ sale.profit }}$
+            {% endif %}
+          {% endfor %}
+        </a>
+      {% endfor %}
+      <hr>
+
+      <p>
+        Games sold: {{ count }}, Profit: {{ total.amount__sum }}$
+      </p>
+    </div>
+    {% else %}
+      <br>
+      <p>You haven't added any games</p>
+    {% endif %}
+    <hr />
+
+{% endblock %}
